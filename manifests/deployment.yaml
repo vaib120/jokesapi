@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jokesapiwf
+  labels:
+    app: jokesapiwf
+  namespace: namespace-workflow-1700112424831
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jokesapiwf
+  template:
+    metadata:
+      labels:
+        app: jokesapiwf
+    spec:
+      containers:
+        - name: jokesapiwf
+          image: acrworkflow1700070265308.azurecr.io/image-workflow-1700112424831ns:latest
+          ports:
+            - containerPort: 3000
