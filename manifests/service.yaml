@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jokesapiwf
+  namespace: namespace-workflow-1700112424831
+spec:
+  type: LoadBalancer
+  selector:
+    app: jokesapiwf
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
